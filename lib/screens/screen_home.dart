@@ -16,17 +16,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: colorSquare_1,
-          ),
           FractionallySizedBox(
             widthFactor: size_0750,
             child: AspectRatio(
               aspectRatio: size_1,
               child: Container(
-                color: colorSquare_2,
+                color: colorSquareBlue,
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: FractionallySizedBox(
@@ -34,18 +29,18 @@ class HomeScreen extends StatelessWidget {
                     child: AspectRatio(
                       aspectRatio: size_1,
                       child: Container(
-                        color: colorSquare_3,
+                        color: colorSquareRed,
                         child: Stack(
                           children: squareElements.map(
-                            (config) {
+                            (square) {
                               return Align(
-                                alignment: config['alignment'],
+                                alignment: square.alignment,
                                 child: FractionallySizedBox(
-                                  widthFactor: config['widthFactor'],
+                                  widthFactor: square.widthFactor,
                                   child: AspectRatio(
                                     aspectRatio: 1.0,
                                     child: Container(
-                                      color: config['color'],
+                                      color: square.color,
                                     ),
                                   ),
                                 ),
